@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RelatoEDU AI — Relatórios da Educação Infantil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#FF6B35"/><text x="50" y="62" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="30" fill="#17211B">RE</text></svg></template>
+<style>
+:root{--ink:#17211B;--paper:#FFF7EA;--cream:#FFEFD3;--green:#1E5B41;--green-d:#123826;--orange:#FF6B35;--yellow:#FFC93C;--pink:#FF9EC4;--sky:#8CCBFF;--mint:#BDF0C8;--display:"Bricolage Grotesque",system-ui,sans-serif;--body:"DM Sans",system-ui,sans-serif;--b:3px solid var(--ink);--sh:6px 6px 0 var(--ink);--pad:clamp(20px,5vw,72px)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--green)}a:hover{color:var(--orange)}
+h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-0.035em;text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+ul,ol{list-style:none;margin:0;padding:0}
+.wrap{max-width:1240px;margin:0 auto;padding:0 var(--pad)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:60px;padding:0 30px;font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:-0.01em;text-decoration:none;color:var(--ink);background:var(--yellow);border:var(--b);border-radius:999px;box-shadow:var(--sh);transition:transform .15s,box-shadow .15s,background .15s}
+.btn:hover{color:var(--ink);transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink)}
+.btn:active{transform:translate(4px,4px);box-shadow:2px 2px 0 var(--ink)}
+.btn.or{background:var(--orange)}
+.btn.sm{min-height:48px;font-size:16px;padding:0 22px;box-shadow:4px 4px 0 var(--ink)}
+.brand{font-family:var(--display);font-weight:800;font-size:28px;letter-spacing:-0.04em;color:var(--green);text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.brand b{background:var(--sky);color:var(--ink);border:var(--b);border-radius:10px;padding:0 8px;font-size:20px;line-height:30px;transform:rotate(-6deg);display:inline-block}
+.eyebrow{display:inline-flex;align-self:flex-start;font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.02em;padding:6px 16px;border:var(--b);border-radius:999px;background:var(--paper)}
+.sec-h{display:flex;flex-direction:column;gap:20px;margin-bottom:56px}
+.sec-h h2{font-size:clamp(40px,6.4vw,88px);line-height:.98;font-weight:800;max-width:15ch}
+.sec-h p{font-size:clamp(18px,1.7vw,22px);max-width:42ch}
+/* marquee */
+.mq{overflow:hidden;border-block:var(--b);background:var(--ink);color:var(--paper);font-family:var(--display);font-weight:700}
+.mq-t{display:flex;width:max-content;gap:32px;padding:12px 0;animation:mq 28s linear infinite}
+.mq-t span{display:flex;align-items:center;gap:32px;white-space:nowrap;font-size:17px}
+.mq-t span::after{content:"";width:12px;height:12px;background:var(--yellow);transform:rotate(45deg)}
+@keyframes mq{to{transform:translateX(-50%)}}
+.mq.big{background:var(--orange);color:var(--ink);transform:rotate(-2deg);margin:0 -20px}
+.mq.big .mq-t{animation-duration:34s;padding:18px 0}
+.mq.big .mq-t span{font-size:clamp(24px,3vw,40px);font-weight:800;letter-spacing:-0.03em}
+.mq.big .mq-t span::after{background:var(--paper);border:var(--b);width:22px;height:22px}
+.mq.rev .mq-t{animation-direction:reverse}
+/* nav */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:22px}
+/* hero */
+.hero{padding-block:40px 120px;position:relative}
+.hero-g{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:56px;align-items:center}
+.hero h1{font-size:clamp(52px,8.4vw,128px);line-height:.92;font-weight:800}
+.hl{display:inline-block;background:var(--yellow);border:var(--b);border-radius:18px;padding:0 .12em;transform:rotate(-2.5deg);box-shadow:5px 5px 0 var(--ink);margin:.06em 0}
+.hl.p{background:var(--pink);transform:rotate(1.8deg)}
+.hero .sub{font-size:clamp(18px,1.8vw,23px);max-width:36ch;margin:32px 0 40px}
+.hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:20px}
+.hero-cta small{font-size:15px;font-weight:500}
+.stack{position:relative;min-height:520px}
+.note{position:absolute;background:#fff;border:var(--b);border-radius:22px;box-shadow:var(--sh);padding:24px}
+.note .lb{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:14px;padding:4px 12px;border:2px solid var(--ink);border-radius:999px;margin-bottom:14px}
+.n1{top:0;left:0;width:78%;transform:rotate(-5deg);background:var(--cream)}
+.n1 .lb{background:var(--mint)}
+.n2{top:150px;right:0;width:84%;transform:rotate(3deg);background:var(--sky)}
+.n2 .lb{background:#fff}
+.n2 p{font-size:17px}
+.n3{bottom:0;left:6%;transform:rotate(-3deg);background:var(--yellow);padding:16px 20px;display:flex;align-items:center;gap:12px;font-family:var(--display);font-weight:800;font-size:22px}
+.chip{display:inline-block;margin-top:14px;font-size:13px;font-weight:700;background:#fff;border:2px solid var(--ink);border-radius:999px;padding:3px 10px}
+.gi{display:inline-block;width:18px;height:18px;background:currentColor;-webkit-mask:var(--g) center/contain no-repeat;mask:var(--g) center/contain no-repeat}
+.sticker{position:absolute;width:150px;height:150px;border-radius:50%;background:var(--orange);border:var(--b);box-shadow:var(--sh);display:flex;align-items:center;justify-content:center;right:0;top:-40px;z-index:3}
+.sticker svg{position:absolute;inset:6px;width:calc(100% - 12px);height:calc(100% - 12px);animation:spin 16s linear infinite}
+.sticker strong{font-family:var(--display);font-weight:800;font-size:30px;white-space:nowrap;letter-spacing:-0.04em}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* problema */
+.prob{padding:140px 0 120px}
+.scenes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.scene{border:var(--b);border-radius:22px;box-shadow:var(--sh);padding:28px;display:flex;flex-direction:column;gap:18px;min-height:280px;transition:transform .2s}
+.scene:nth-child(1){background:var(--yellow);transform:rotate(-2.5deg)}
+.scene:nth-child(2){background:var(--pink);transform:rotate(1.5deg) translateY(24px)}
+.scene:nth-child(3){background:var(--sky);transform:rotate(-1deg)}
+.scene:hover{transform:rotate(0) translateY(-6px)}
+.scene .t{font-family:var(--display);font-weight:800;font-size:clamp(28px,3vw,40px);line-height:1;letter-spacing:-0.03em}
+.scene p{font-size:20px;line-height:1.4;font-weight:500}
+/* solução */
+.sol{background:var(--green);color:var(--paper);border-block:var(--b);padding:120px 0;position:relative;overflow:hidden}
+.sol-g{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:64px;align-items:center}
+.sol .eyebrow{background:var(--yellow);color:var(--ink)}
+.sol h2{font-size:clamp(40px,6vw,84px);line-height:.98;font-weight:800;margin:20px 0 24px;color:var(--paper)}
+.sol h2 em{font-style:normal;color:var(--yellow)}
+.sol .lead{font-size:clamp(18px,1.7vw,22px);max-width:38ch}
+.steps{display:flex;flex-direction:column;gap:20px}
+.steps li{display:grid;grid-template-columns:64px 1fr;gap:20px;align-items:center;background:var(--paper);color:var(--ink);border:var(--b);border-radius:22px;box-shadow:6px 6px 0 var(--green-d);padding:20px 24px;font-size:18px;font-weight:500}
+.steps li:nth-child(2){margin-left:32px}
+.steps .n{width:64px;height:64px;border-radius:50%;border:var(--b);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;font-size:30px;background:var(--orange)}
+.steps li:nth-child(2) .n{background:var(--sky)}
+.steps li:nth-child(3) .n{background:var(--yellow)}
+/* diferenciais */
+.dif{padding:140px 0 120px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.card{border:var(--b);border-radius:28px;box-shadow:var(--sh);padding:36px;display:flex;flex-direction:column;gap:16px;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translate(-4px,-4px) rotate(-.6deg);box-shadow:10px 10px 0 var(--ink)}
+.card:nth-child(1){background:var(--mint)}.card:nth-child(2){background:var(--sky)}.card:nth-child(3){background:var(--yellow)}.card:nth-child(4){background:var(--pink)}
+.ic{width:76px;height:76px;border-radius:22px;border:var(--b);background:#fff;display:flex;align-items:center;justify-content:center;transform:rotate(-6deg);margin-bottom:8px}
+.card:nth-child(even) .ic{transform:rotate(5deg)}
+.ic .gi{width:38px;height:38px}
+.card h3{font-size:clamp(28px,3vw,40px);line-height:1;font-weight:800}
+.card p{font-size:19px;line-height:1.45}
+.card strong{font-weight:700;background:#fff;padding:0 6px;border-radius:6px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+/* como funciona */
+.how{padding:120px 0;background:var(--cream);border-block:var(--b)}
+.flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+.flow li{display:flex;flex-direction:column;gap:14px;position:relative}
+.flow .k{font-family:var(--display);font-weight:800;font-size:clamp(120px,14vw,200px);line-height:.8;letter-spacing:-0.06em;color:var(--paper);-webkit-text-stroke:3px var(--ink);text-shadow:8px 8px 0 var(--orange)}
+.flow li:nth-child(2) .k{text-shadow:8px 8px 0 var(--sky)}
+.flow li:nth-child(3) .k{text-shadow:8px 8px 0 var(--pink)}
+.flow h3{font-size:clamp(28px,2.8vw,38px);line-height:1.05;font-weight:800;margin-top:12px}
+.flow p{font-size:19px}
+.how-cta{margin-top:64px;display:flex;justify-content:center}
+/* depoimentos */
+.dep{padding:140px 0 120px}
+.quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;align-items:start}
+.quote{background:#fff;border:var(--b);border-radius:28px;box-shadow:var(--sh);padding:30px;display:flex;flex-direction:column;gap:22px}
+.quote:nth-child(1){transform:rotate(-1.5deg)}.quote:nth-child(2){transform:rotate(1deg) translateY(40px)}.quote:nth-child(3){transform:rotate(-.5deg)}
+.quote .res{font-family:var(--display);font-weight:800;font-size:clamp(30px,3vw,42px);line-height:1;letter-spacing:-0.035em;background:var(--yellow);border:var(--b);border-radius:18px;padding:16px 18px}
+.quote:nth-child(2) .res{background:var(--mint)}.quote:nth-child(3) .res{background:var(--pink)}
+.quote blockquote{margin:0;font-size:18px;line-height:1.55}
+.who{display:flex;align-items:center;gap:14px}
+.av{flex:none;width:54px;height:54px;border-radius:50%;border:var(--b);background:var(--sky);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;font-size:18px}
+.who b{display:block;font-family:var(--display);font-size:18px;line-height:1.2}
+.who small{display:block;font-size:14px;line-height:1.3}
+/* planos */
+.pl{padding:160px 0 140px}
+.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:center}
+.plan{position:relative;background:#fff;border:var(--b);border-radius:28px;box-shadow:var(--sh);padding:32px;display:flex;flex-direction:column;gap:20px}
+.plan.hi{background:var(--orange);padding:44px 32px;box-shadow:12px 12px 0 var(--ink);transform:rotate(-1deg)}
+.plan .tag{position:absolute;top:-22px;right:18px;background:var(--yellow);border:var(--b);border-radius:999px;padding:8px 16px;font-family:var(--display);font-weight:800;font-size:16px;transform:rotate(6deg);box-shadow:4px 4px 0 var(--ink)}
+.plan h3{font-size:40px;line-height:1;font-weight:800}
+.plan .for{font-size:16px;line-height:1.45}
+.price{display:flex;align-items:baseline;gap:6px;font-family:var(--display)}
+.price .cur{font-weight:700;font-size:22px}
+.price .val{font-weight:800;font-size:clamp(48px,5vw,68px);line-height:1;letter-spacing:-0.05em}
+.price .per{font-weight:600;font-size:18px}
+.inc{display:flex;flex-direction:column;gap:12px;padding-top:20px;border-top:3px dashed var(--ink);font-size:16px;line-height:1.4}
+.inc li{display:grid;grid-template-columns:24px 1fr;gap:10px}
+.inc li::before{content:"";width:24px;height:24px;border-radius:50%;border:2px solid var(--ink);background:var(--mint) url(assets/icons/check.svg) center/14px no-repeat}
+.plan.hi .inc li::before{background-color:var(--yellow)}
+.plan .btn{width:100%;background:var(--paper)}
+.plan.hi .btn{background:var(--yellow)}
+.note-s{text-align:center;font-size:14px;font-weight:700;min-height:20px}
+/* chamada final */
+.fc{background:var(--yellow);border-top:var(--b);padding:140px 0 120px;text-align:center;position:relative;overflow:hidden}
+.fc h2{font-size:clamp(52px,9vw,140px);line-height:.9;font-weight:800;max-width:12ch;margin:0 auto}
+.fc h2 .hl{background:var(--paper)}
+.fc p{font-size:clamp(18px,1.8vw,24px);max-width:36ch;margin:32px auto 44px;font-weight:500}
+.fc .btn{min-height:72px;font-size:24px;padding:0 40px;background:var(--orange)}
+/* rodapé */
+.ft{background:var(--green-d);color:var(--paper);border-top:var(--b);padding:64px 0 32px}
+.ft-in{display:flex;flex-direction:column;gap:40px}
+.ft-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
+.ft .brand{color:var(--paper);font-size:40px}
+.soc{display:flex;gap:12px}
+.soc a{width:52px;height:52px;border-radius:50%;background:var(--paper);color:var(--ink);border:var(--b);display:flex;align-items:center;justify-content:center;transition:transform .15s,background .15s}
+.soc a:hover{transform:rotate(-10deg) scale(1.08);background:var(--yellow);color:var(--ink)}
+.soc .gi{width:22px;height:22px}
+.ft nav{display:flex;flex-wrap:wrap;gap:12px}
+.ft nav a{color:var(--paper);text-decoration:none;font-family:var(--display);font-weight:700;font-size:18px;padding:8px 18px;border:2px solid var(--paper);border-radius:999px;transition:background .15s,color .15s}
+.ft nav a:hover{background:var(--paper);color:var(--ink)}
+.ft-bot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:24px;border-top:2px solid rgba(255,247,234,.25);font-size:14px}
+.ft-bot a{color:var(--paper)}
+@media (max-width:1024px){.hero-g{grid-template-columns:1fr}.stack{width:100%;max-width:560px;margin:40px auto 0}}
+@media (max-width:900px){
+.sol-g{grid-template-columns:1fr}
+.stack{min-height:480px;max-width:520px}
+.scenes,.flow,.quotes{grid-template-columns:1fr}
+.scene:nth-child(2),.quote:nth-child(2){transform:rotate(1deg)}
+.cards{grid-template-columns:1fr}
+.steps li:nth-child(2){margin-left:0}
+}
+@media (max-width:767px){.plans{grid-template-columns:1fr}.plan.hi{transform:none}}
+</style>
+</head>
+<body>
+<div class="mq" aria-hidden="true"><div class="mq-t"><span>Observações gratuitas para sempre</span><span>Relatório em 1 clique</span><span>Feito para a Educação Infantil</span><span>Alinhado à BNCC</span><span>Observações gratuitas para sempre</span><span>Relatório em 1 clique</span><span>Feito para a Educação Infantil</span><span>Alinhado à BNCC</span></div></div>
+<header class="wrap nav"><a class="brand" href="#">RelatoEDU <b>AI</b></a><a class="btn sm" href="#cadastro">Cadastre-se grátis</a></header>
+<section class="hero wrap" data-screen-label="Hero">
+<div class="hero-g">
+<div>
+<h1 class="h1">O relatório de <span class="hl">cada criança,</span> pronto em <span class="hl p">minutos.</span></h1>
+<p class="sub">Você registra observações curtas ao longo do bimestre e a IA escreve um rascunho de relatório individual para cada criança da turma, alinhado aos campos de experiência da BNCC. Você só revisa, ajusta o tom e envia.</p>
+<div class="hero-cta"><a class="btn or" href="#cadastro">Cadastre-se na plataforma gratuitamente</a></div>
+</div>
+<div class="stack" aria-label="Exemplo de observação virando relatório">
+<div class="sticker"><svg viewBox="0 0 100 100" aria-hidden="true"><defs><path id="c" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"></path></defs><text font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="10.5" fill="#17211B"><textPath href="#c" textLength="234" lengthAdjust="spacing">GRÁTIS PARA SEMPRE • GRÁTIS PARA SEMPRE •</textPath></text></svg><strong>R$ 0</strong></div>
+<div class="note n1"><span class="lb">Observação · 12 mar</span><p>Helena empilhou seis blocos sozinha e contou em voz alta até seis.</p></div>
+<div class="note n2"><span class="lb"><i class="gi" style="--g:url(assets/icons/sparkles.svg)"></i>Rascunho da IA</span><p>Helena demonstra autonomia crescente nas brincadeiras de construção, explorando quantidades e registrando a contagem oralmente…</p><span class="chip">Espaços, tempos, quantidades, relações e transformações</span></div>
+<div class="note n3"><i class="gi" style="--g:url(assets/icons/mouse-pointer-click.svg);width:28px;height:28px"></i>1 clique</div>
+</div>
+</div>
+</section>
+<div class="mq big" aria-hidden="true"><div class="mq-t"><span>Menos noites escrevendo</span><span>Mais tempo com as crianças</span><span>Relatórios com a cara de cada uma</span><span>Menos noites escrevendo</span><span>Mais tempo com as crianças</span><span>Relatórios com a cara de cada uma</span></div></div>
+<section class="prob" id="problema" data-screen-label="Problema">
+<div class="wrap">
+<div class="sec-h"><span class="eyebrow">O problema</span><h2>Fim de bimestre ainda significa noites escrevendo relatórios.</h2></div>
+<ul class="scenes">
+<li class="scene"><span class="t">Domingo, 22h</span><p>Vinte e cinco relatórios para entregar na sexta, e você ainda está no quarto.</p></li>
+<li class="scene"><span class="t">Terça, no intervalo</span><p>Anotações espalhadas entre o caderno, fotos no celular e post-its na mesa.</p></li>
+<li class="scene"><span class="t">Quinta, reunião</span><p>A coordenação pede para reescrever: “Ficou parecido com o relatório de outra criança.”</p></li>
+</ul>
+</div>
+</section>
+<section class="sol" data-screen-label="Solução">
+<div class="wrap sol-g">
+<div><span class="eyebrow">A solução</span><h2>O RelatoEDU AI escreve o <em>primeiro rascunho</em> por você.</h2><p class="lead">Uma plataforma de relatórios com IA feita para a Educação Infantil. Você continua sendo a autora; só deixa de começar do zero.</p></div>
+<ol class="steps">
+<li><span class="n">1</span><span>Registre observações curtas ao longo das semanas, do jeito que acontecem.</span></li>
+<li><span class="n">2</span><span>A IA transforma tudo em um relatório individual, com a voz de cada criança e os campos de experiência da BNCC.</span></li>
+<li><span class="n">3</span><span>Revise, ajuste o tom e envie. Em minutos, não em noites.</span></li>
+</ol>
+</div>
+</section>
+<section class="dif" id="diferenciais" data-screen-label="Diferenciais">
+<div class="wrap">
+<div class="sec-h"><span class="eyebrow">Diferenciais</span><h2>Feito para caber na sua rotina e no seu bolso.</h2></div>
+<ul class="cards">
+<li class="card"><span class="ic"><i class="gi" style="--g:url(assets/icons/infinity.svg)"></i></span><h3>Gratuito para sempre</h3><p>Ao se cadastrar, observações e gestão das crianças da turma são <strong>gratuitas para sempre</strong>.</p></li>
+<li class="card"><span class="ic"><i class="gi" style="--g:url(assets/icons/sparkles.svg)"></i></span><h3>Relatórios personalizados</h3><p>A IA considera todo o histórico da criança ao escrever. O resultado é um relatório <strong>correto e com a cara dela</strong>.</p></li>
+<li class="card"><span class="ic"><i class="gi" style="--g:url(assets/icons/mouse-pointer-click.svg)"></i></span><h3>Relatório em 1 clique</h3><p>Um único botão e o relatório está pronto para <strong>você revisar</strong>.</p></li>
+<li class="card"><span class="ic"><i class="gi" style="--g:url(assets/icons/wallet.svg)"></i></span><h3>Pacotes acessíveis</h3><p>Escolha o pacote que atende à sua necessidade e <strong>cabe no seu bolso</strong>.</p></li>
+</ul>
+</div>
+</section>
+<section class="how" id="como-funciona" data-screen-label="Como funciona">
+<div class="wrap">
+<div class="sec-h"><span class="eyebrow">Como funciona</span><h2>Do cadastro ao primeiro relatório em poucos minutos.</h2><p>Sem instalação e sem treinamento. Se você sabe anotar, já sabe usar.</p></div>
+<ol class="flow">
+<li><span class="k">1</span><h3>Crie sua conta</h3><p>Nome, e-mail e senha. É gratuito e leva menos de um minuto.</p></li>
+<li><span class="k">2</span><h3>Registre observações</h3><p>Anote o que cada criança fez no dia, em poucas palavras, do seu jeito.</p></li>
+<li><span class="k">3</span><h3>Gere os relatórios</h3><p>Com um clique, a IA escreve um relatório personalizado para cada criança. Você revisa e envia.</p></li>
+</ol>
+</div>
+</section>
+<section class="dep" id="depoimentos" data-screen-label="Depoimentos">
+<div class="wrap">
+<div class="sec-h"><span class="eyebrow">Depoimentos</span><h2>Quem já usa conta o que mudou.</h2></div>
+<ul class="quotes">
+<li class="quote"><div class="res">De 3 semanas para 4 dias</div><blockquote>“Tenho 24 crianças no Infantil II e levava três semanas de noites e fins de semana para fechar os relatórios do bimestre. No primeiro bimestre com o RelatoEDU AI, entreguei tudo em quatro dias, dentro do horário de planejamento.”</blockquote><div class="who"><span class="av">MC</span><div><b>Mariana Costa, 34 anos</b><small>Professora de creche municipal</small></div></div></li>
+<li class="quote"><div class="res">Zero devoluções em 1 semestre</div><blockquote>“Eu revisava 180 relatórios por bimestre e devolvia quase um terço por serem genéricos demais. Em um semestre usando a plataforma, nenhum relatório precisou voltar para reescrita, e as famílias passaram a comentar os detalhes.”</blockquote><div class="who"><span class="av" style="background:var(--yellow)">RA</span><div><b>Renata Almeida</b><small>Coordenadora pedagógica, Escola Pequeno Ipê</small></div></div></li>
+<li class="quote"><div class="res">15 minutos por criança</div><blockquote>“Dou aula em duas escolas, com turmas de pré-escola nos dois períodos. Antes eu gastava mais de uma hora por relatório. Depois de dois meses registrando observações no celular, cada relatório sai revisado em uns 15 minutos.”</blockquote><div class="who"><span class="av" style="background:var(--mint)">JS</span><div><b>José Santos, 41 anos</b><small>Professor de pré-escola</small></div></div></li>
+</ul>
+</div>
+</section>
+<div class="mq big rev" aria-hidden="true" style="background:var(--sky);transform:rotate(1.5deg)"><div class="mq-t"><span>Semente</span><span>Broto</span><span>Árvore</span><span>Sem fidelidade</span><span>Semente</span><span>Broto</span><span>Árvore</span><span>Sem fidelidade</span></div></div>
+<section class="pl" id="planos" data-screen-label="Planos">
+<div class="wrap">
+<div class="sec-h"><span class="eyebrow">Planos</span><h2>Escolha o pacote que cabe na sua turma.</h2><p>Observações e gestão das crianças são gratuitas para sempre. Você só paga pelos relatórios gerados com IA.</p></div>
+<ul class="plans">
+<li class="plan"><h3>Semente</h3><p class="for">Para quem tem uma turma pequena ou quer começar devagar.</p><div class="price"><span class="cur">R$</span><span class="val">19,90</span><span class="per">/mês</span></div><ul class="inc"><li>Até 10 relatórios por mês</li><li>Turmas ilimitadas</li><li>Relatórios alinhados aos campos de experiência da BNCC</li><li>Histórico completo de cada criança</li><li>Exportação em PDF</li></ul><a class="btn" href="#cadastro">Escolher Semente</a><p class="note-s">Sem fidelidade</p></li>
+<li class="plan hi"><span class="tag">Mais escolhido</span><h3>Broto</h3><p class="for">Para a professora com uma ou duas turmas cheias.</p><div class="price"><span class="cur">R$</span><span class="val">49,90</span><span class="per">/mês</span></div><ul class="inc"><li>Até 30 relatórios por mês</li><li>Tudo do Semente</li><li>Ajuste de tom: mais formal ou mais afetivo</li><li>Anexar fotos e evidências às observações</li><li>Exportação em PDF e Word</li></ul><a class="btn" href="#cadastro">Escolher Broto</a><p class="note-s">Sem fidelidade</p></li>
+<li class="plan"><h3>Árvore</h3><p class="for">Para quem dá aula em mais de uma escola ou coordena equipes.</p><div class="price"><span class="cur">R$</span><span class="val">99,90</span><span class="per">/mês</span></div><ul class="inc"><li>Até 70 relatórios por mês</li><li>Tudo do Broto</li><li>Modelos de relatório da sua escola</li><li>Compartilhamento com a coordenação para revisão</li><li>Suporte prioritário</li></ul><a class="btn" href="#cadastro">Escolher Árvore</a><p class="note-s"></p></li>
+</ul>
+</div>
+</section>
+<section class="fc" id="cadastro" data-screen-label="Chamada final">
+<div class="wrap">
+<h2>O relatório de cada criança, <span class="hl">pronto em minutos.</span></h2>
+<p>Registre observações, gere com um clique e revise. Observações gratuitas para sempre.</p>
+<a class="btn" href="#cadastro">Cadastro gratuito na plataforma</a>
+</div>
+</section>
+<footer class="ft" data-screen-label="Rodapé">
+<div class="wrap ft-in">
+<div class="ft-top"><a class="brand" href="#">RelatoEDU <b>AI</b></a><div class="soc"><a href="#" aria-label="Instagram"><i class="gi" style="--g:url(assets/icons/instagram.svg)"></i></a><a href="#" aria-label="Facebook"><i class="gi" style="--g:url(assets/icons/facebook.svg)"></i></a><a href="#" aria-label="YouTube"><i class="gi" style="--g:url(assets/icons/youtube.svg)"></i></a><a href="#" aria-label="LinkedIn"><i class="gi" style="--g:url(assets/icons/linkedin.svg)"></i></a></div></div>
+<nav aria-label="Rodapé"><a href="#problema">Problema</a><a href="#diferenciais">Diferenciais</a><a href="#como-funciona">Como funciona</a><a href="#depoimentos">Depoimentos</a><a href="#planos">Planos</a></nav>
+<div class="ft-bot"><span>© 2026 RelatoEDU AI. Todos os direitos reservados.</span><span style="display:flex;flex-wrap:wrap;gap:20px"><a href="Politica de Privacidade.html">Política de privacidade</a><a href="Termos de Uso.html">Termos de uso</a></span></div>
+</div>
+</footer>
+<script src="https://unpkg.com/motion@11.11.13/dist/motion.js"></script>
+<script>
+(()=>{
+if(!window.Motion||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+const{animate,inView,stagger,scroll}=Motion;
+const POP=[.34,1.56,.64,1],E=[.2,0,0,1],$=(s,r=document)=>[...r.querySelectorAll(s)],q=s=>document.querySelector(s);
+const saved=new Map();
+const hide=els=>els.forEach(e=>{if(!saved.has(e))saved.set(e,e.style.transform);e.style.opacity=0;});
+const clear=els=>els.forEach(e=>{e.style.opacity='';e.style.transform=saved.get(e)||'';});
+const base=e=>getComputedStyle(e).transform==='none'?'':getComputedStyle(e).transform;
+function reveal(trig,els,fn){if(!trig)return;const bases=new Map(els.map(e=>[e,base(e)]));hide(els);let done=false;const fin=()=>clear(els);const run=()=>{if(done)return;done=true;const r=[].concat(fn(e=>bases.get(e)||'')).filter(Boolean);Promise.all(r.map(x=>x.finished||Promise.resolve())).then(fin,fin);setTimeout(fin,4000);};inView(trig,run,{amount:0,margin:'0px 0px -12% 0px'});const b=trig.getBoundingClientRect();if(b.top<innerHeight*.88&&b.bottom>0)run();}
+/* barra de progresso */
+const bar=document.createElement('div');bar.setAttribute('aria-hidden','true');Object.assign(bar.style,{position:'fixed',top:0,left:0,right:0,height:'6px',background:'var(--orange)',borderBottom:'2px solid var(--ink)',transformOrigin:'0 50%',transform:'scaleX(0)',zIndex:50});document.body.appendChild(bar);
+if(scroll)scroll(animate(bar,{transform:['scaleX(0)','scaleX(1)']},{ease:'linear'}));
+/* hero: título cai linha a linha, notas voam para a pilha */
+const h1=q('.hero h1'),hls=$('.hl',h1);
+const heroTxt=[q('.hero .sub'),q('.hero-cta')];
+reveal(h1,[h1,...hls,...heroTxt],B=>[
+animate(h1,{opacity:[0,1],transform:['translateY(40px)','translateY(0)']},{duration:.6,ease:E}),
+animate(hls,{opacity:[0,1],transform:hls.map((e,i)=>[B(e)+' scale(.4) rotate('+(i?20:-20)+'deg)',B(e)])[0]},{duration:.7,delay:stagger(.25,{startDelay:.35}),ease:POP}),
+animate(heroTxt,{opacity:[0,1],transform:['translateY(24px)','translateY(0)']},{duration:.5,delay:stagger(.15,{startDelay:.7}),ease:E})]);
+const notes=$('.stack .note'),stk=q('.sticker');
+reveal(q('.stack'),[...notes,stk],B=>[
+...notes.map((n,i)=>animate(n,{opacity:[0,1],transform:[B(n)+' translate('+(i%2?120:-120)+'px,80px) rotate('+(i%2?14:-14)+'deg)',B(n)]},{duration:.8,delay:.5+i*.3,ease:POP})),
+animate(stk,{opacity:[0,1],transform:['scale(0) rotate(-180deg)','scale(1) rotate(0deg)']},{duration:.9,delay:1.5,ease:POP})]);
+/* títulos de seção: selo cai, título desliza */
+$('.sec-h').forEach(h=>{const ey=q.call?h.querySelector('.eyebrow'):null,rest=[...h.children].filter(c=>c!==ey);reveal(h,[ey,...rest],()=>[animate(ey,{opacity:[0,1],transform:['translateY(-30px) rotate(-12deg)','translateY(0) rotate(0deg)']},{duration:.6,ease:POP}),animate(rest,{opacity:[0,1],transform:['translateX(-40px)','translateX(0)']},{duration:.7,delay:stagger(.15,{startDelay:.15}),ease:E})]);});
+/* problema: bilhetes caem e se acomodam tortos */
+const sc=$('.scenes > li');reveal(q('.scenes'),sc,B=>sc.map((s,i)=>animate(s,{opacity:[0,1],transform:['translateY(-120px) rotate('+(i%2?-18:18)+'deg)',B(s)]},{duration:.8,delay:i*.2,ease:POP})));
+/* solução: passos deslizam da direita, um de cada vez */
+const st=$('.steps > li'),sn=$('.steps .n');hide(sn);
+reveal(q('.steps'),[...st,...sn],B=>[animate(st,{opacity:[0,1],transform:['translateX(120px)','translateX(0)']},{duration:.7,delay:stagger(.2),ease:E}),animate(sn,{opacity:[0,1],transform:['scale(0) rotate(-90deg)','scale(1) rotate(0deg)']},{duration:.6,delay:stagger(.2,{startDelay:.35}),ease:POP})]);
+/* diferenciais: cartões viram, ícones saltam */
+const cd=$('.cards > li'),ic=$('.cards .ic');
+reveal(q('.cards'),[...cd,...ic],B=>[animate(cd,{opacity:[0,1],transform:['perspective(900px) rotateX(-40deg) translateY(60px)','perspective(900px) rotateX(0deg) translateY(0)']},{duration:.8,delay:stagger(.15),ease:E}),...ic.map((e,i)=>animate(e,{opacity:[0,1],transform:['scale(0) rotate(40deg)',B(e)]},{duration:.7,delay:.4+i*.15,ease:POP}))]);
+/* como funciona: números gigantes sobem, texto em seguida */
+const ks=$('.flow .k'),ft=$('.flow h3,.flow p');
+reveal(q('.flow'),[...ks,...ft],()=>[animate(ks,{opacity:[0,1],transform:['translateY(80px) scale(.6)','translateY(0) scale(1)']},{duration:.8,delay:stagger(.25),ease:POP}),animate(ft,{opacity:[0,1],transform:['translateY(20px)','translateY(0)']},{duration:.5,delay:stagger(.12,{startDelay:.4}),ease:E})]);
+/* depoimentos: cartões giram para o lugar, resultado carimba */
+const qu=$('.quotes > li'),rs=$('.quotes .res');
+reveal(q('.quotes'),[...qu,...rs],B=>[...qu.map((e,i)=>animate(e,{opacity:[0,1],transform:['translateY(100px) rotate('+(i-1)*12+'deg)',B(e)]},{duration:.8,delay:i*.2,ease:E})),animate(rs,{opacity:[0,1],transform:['scale(1.4) rotate(-6deg)','scale(1) rotate(0deg)']},{duration:.5,delay:stagger(.2,{startDelay:.45}),ease:POP})]);
+/* planos: Broto salta primeiro, laterais chegam das bordas, selo gira */
+const [p1,p2,p3]=$('.plans > li'),tg=q('.plan .tag');
+reveal(q('.plans'),[p1,p2,p3,tg],B=>[animate(p2,{opacity:[0,1],transform:['scale(.6) rotate(-10deg)',B(p2)]},{duration:.8,ease:POP}),animate(p1,{opacity:[0,1],transform:['translateX(-160px) rotate(-8deg)',B(p1)]},{duration:.7,delay:.3,ease:E}),animate(p3,{opacity:[0,1],transform:['translateX(160px) rotate(8deg)',B(p3)]},{duration:.7,delay:.3,ease:E}),animate(tg,{opacity:[0,1],transform:['scale(0) rotate(-120deg)',B(tg)]},{duration:.7,delay:.8,ease:POP})]);
+/* chamada final: título cresce, destaque carimba, botão pula */
+const fh=q('.fc h2'),fhl=q('.fc .hl'),fp=q('.fc p'),fb=q('.fc .btn');
+reveal(fh,[fh,fhl,fp,fb],B=>[animate(fh,{opacity:[0,1],transform:['scale(.85)','scale(1)']},{duration:.7,ease:E}),animate(fhl,{opacity:[0,1],transform:['scale(1.6) rotate(-12deg)',B(fhl)]},{duration:.6,delay:.35,ease:POP}),animate(fp,{opacity:[0,1]},{duration:.5,delay:.6}),animate(fb,{opacity:[0,1],transform:['translateY(40px) scale(.8)','translateY(0) scale(1)']},{duration:.7,delay:.8,ease:POP})]);
+/* faixas inclinadas oscilam com a rolagem */
+if(scroll)$('.mq.big').forEach((m,i)=>{const r0=i?1.5:-2;scroll(animate(m,{transform:['rotate('+(r0-1.5)+'deg)','rotate('+(r0+1.5)+'deg)']},{ease:'linear'}),{target:m,offset:['start end','end start']});});
+})();
+</script>
+</body>
+</html>
